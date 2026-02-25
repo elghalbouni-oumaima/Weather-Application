@@ -1,135 +1,256 @@
-# Weather Application
-A desktop weather application built with PyQt5 that displays current weather conditions and a 7-day forecast for any city. The app integrates APIs from OpenWeatherMap, Open-Meteo, and OpenCage to provide real-time weather data, with a user-friendly interface featuring temperature unit conversion (°C/°F), city search with autocomplete, and a visually appealing design with icons and shadow effects.
-Features
+# 🌦️ Weather Application
 
-## Current Weather (Page 1):
+A desktop weather application developed with **PyQt5** that provides real-time current weather conditions and a 7-day forecast for any city worldwide.
 
-Displays temperature, humidity, pressure, visibility, wind speed, sunrise, and sunset.
-Supports temperature conversion between Celsius and Fahrenheit.
-Shows weather description and an icon based on conditions.
-Includes city name, country, region, and local time with a calendar icon.
+The application integrates multiple APIs — OpenWeatherMap, Open-Meteo, and OpenCage — to deliver accurate and up-to-date weather data within a modern, user-friendly graphical interface.
 
+---
 
-## 7-Day and Hourly Forecast (Page 2):
+## 🚀 Features
 
-Provides a 7-day forecast with daily high/low temperatures, humidity, and weather icons.
-Shows hourly temperature and weather conditions for the next 20 hours.
-Supports temperature unit conversion (°C/°F) for forecasts.
+### 1️⃣ Current Weather (Page 1)
 
+* Displays:
 
-## City Search:
+  * Temperature
+  * Humidity
+  * Atmospheric pressure
+  * Visibility
+  * Wind speed
+  * Sunrise & sunset times
+* Weather condition description with dynamic icon
+* City information:
 
-Autocomplete search bar to find cities using OpenWeatherMap's geocoding API.
-Displays up to 5 matching cities with country names.
+  * City name
+  * Country
+  * Region
+  * Local time (with calendar icon)
+* Temperature unit conversion (°C ↔ °F)
 
+---
 
-## UI Design:
+### 2️⃣ 7-Day & Hourly Forecast (Page 2)
 
-Two-page layout with navigation buttons for switching between current weather and forecasts.
-Custom widgets with hover effects, shadow effects, and icons for a polished look.
-Background image and semi-transparent overlays for improved readability.
+* 7-day forecast including:
 
+  * Daily minimum & maximum temperatures
+  * Humidity
+  * Weather condition icons
+* Hourly forecast for the next 20 hours:
 
+  * Temperature
+  * Weather conditions
+* Temperature unit conversion (°C ↔ °F)
 
-# Prerequisites
+---
 
-Python 3.7+
-PyQt5: For the graphical user interface.
-Requests: For making HTTP requests to APIs.
-**python-dotenv: For loading environment variables from a .env file.
-API Keys:
-OpenWeatherMap API key (for current weather and geocoding).
-OpenCage API key (for region information).
+### 3️⃣ City Search with Autocomplete
 
+* Smart search bar with real-time autocomplete
+* Powered by OpenWeatherMap’s geocoding API
+* Displays up to 5 matching cities
+* Includes country information for better accuracy
 
+---
 
-# Installation
+### 4️⃣ Modern UI Design
 
-## Clone the Repository:
+* Two-page layout with smooth navigation
+* Custom widgets with:
+
+  * Hover effects
+  * Shadow effects
+  * Weather icons
+* Background image with semi-transparent overlays for enhanced readability
+* Clean and intuitive user experience
+
+---
+
+# 🛠️ Prerequisites
+
+* Python **3.7+**
+* Required Python packages:
+
+  * `PyQt5`
+  * `requests`
+  * `python-dotenv`
+
+### 🔑 API Keys Required
+
+* OpenWeatherMap API key (weather + geocoding)
+* OpenCage API key (region details)
+
+You can register at:
+
+* [https://openweathermap.org](https://openweathermap.org)
+* [https://opencagedata.com](https://opencagedata.com)
+
+---
+
+# 📦 Installation
+
+## 1️⃣ Clone the Repository
+
+```bash
 git clone <repository-url>
 cd weather-app
+```
 
+## 2️⃣ Create a Virtual Environment (Recommended)
 
-## Install Dependencies:Create a virtual environment (optional but recommended) and install the required packages:
+**Windows:**
+
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
+```
+
+**Linux / macOS:**
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+## 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Or manually:
+
+```bash
 pip install PyQt5 requests python-dotenv
+```
 
+## 4️⃣ Configure Environment Variables
 
-## Set Up Environment Variables:Create a .env file in the project root directory with the following content:
+Create a `.env` file in the project root directory:
+
+```
 API_KEY=<your-openweathermap-api-key>
 OPENCAGE_API_KEY=<your-opencage-api-key>
+```
 
+⚠️ Do not commit your `.env` file to version control.
 
-## Sign up at OpenWeatherMap to get an API key.
-Sign up at OpenCage to get an API key.
+## 5️⃣ Add Image Assets
 
+Ensure the `images/` directory contains all required icon files (e.g., `sunny_icon.png`, `cloudy_icon.png`, etc.) as referenced in the `get_icone` function.
 
-## Add Image Assets:Ensure the images/ directory contains the required icon files (e.g., sunny_icon.png, cloudy_icon.png, etc.) as referenced in the get_icone function. The application expects these images to be present.
+---
 
+# ▶️ Usage
 
-# Usage
+Run the application:
 
-## Run the Application:
+```bash
 python main.py
+```
 
+---
 
-## Interact with the App:
+## 🖥️ Application Workflow
 
-Page 1 (Current Weather):
-Enter a city name in the search bar and press the "Search" button or select a city from the autocomplete list.
-View current weather details, including temperature, humidity, and more.
-Use the °C/°F dropdown to switch temperature units.
-Click the right arrow button to navigate to Page 2.
+### Page 1 — Current Weather
 
+1. Enter a city name in the search bar.
+2. Press **Search** or select a city from the autocomplete list.
+3. View detailed weather information.
+4. Switch temperature units using the °C/°F dropdown.
+5. Click the → button to navigate to forecasts.
 
-Page 2 (Forecast):
-View the 7-day forecast with daily high/low temperatures and humidity.
-Check the hourly forecast for the next 20 hours in the list widget.
-Use the °C/°F dropdown to switch temperature units.
-Click the left arrow button to return to Page 1.
+---
 
+### Page 2 — Forecast
 
+* View the 7-day forecast.
+* Explore hourly predictions (next 20 hours).
+* Switch temperature units as needed.
+* Click the ← button to return to current weather.
 
+---
 
+# 📁 Project Structure
 
-# Project Structure
+```
+weather-app/
+│
+├── main.py          # Main application logic and GUI
+├── images/          # Weather and UI icons
+├── .env             # API keys (not tracked)
+├── requirements.txt # Project dependencies
+└── README.md        # Documentation
+```
 
-main.py: The main application script containing the PyQt5 GUI and API integration logic.
-images/: Directory for icon files used in the UI (e.g., weather icons, search icon).
-.env: File for storing API keys (not included in version control).
-README.md: This documentation file.
+---
 
-# Dependencies
+# 📚 Dependencies
 
-PyQt5==5.15.10
-requests==2.32.3
-python-dotenv==1.0.1
+* PyQt5 == 5.15.10
+* requests == 2.32.3
+* python-dotenv == 1.0.1
 
-Install specific versions using:
+Install specific versions with:
+
+```bash
 pip install -r requirements.txt
+```
 
-# Notes
+---
 
-API Rate Limits: Be mindful of the free tier limits for OpenWeatherMap (1,000 calls/day) and OpenCage (2,500 calls/day). Excessive search bar usage may trigger rate limits.
-Image Assets: Missing or incorrect image paths will cause the app to fail when loading icons. Ensure all paths in get_icone are correct.
-Error Handling: The app displays "Not Found" for invalid cities but may not handle all API errors gracefully. Check the console for debugging information.
-Performance: Frequent API calls during city search typing may slow down the app. Consider implementing a debounce mechanism to limit requests.
+# ⚠️ Important Notes
 
-# Future Improvements
+### API Rate Limits
 
-Add debounce to the search bar to reduce API calls during typing.
-Improve error handling for API failures and display user-friendly messages.
-Cache API responses to reduce redundant network requests.
-Add support for multiple languages or units (e.g., wind speed in mph).
-Enhance accessibility (e.g., keyboard navigation, screen reader support).
+Be aware of free-tier limits:
 
-# License
-This project is licensed under the MIT License. See the LICENSE file for details.
+* OpenWeatherMap: ~1,000 requests/day
+* OpenCage: ~2,500 requests/day
 
-# Acknowledgments
-OpenWeatherMap for weather and geocoding data.
-Open-Meteo for forecast data.
-OpenCage for geocoding region information.
-PyQt5 for the GUI framework.
+Frequent search input may reach these limits.
 
+### Error Handling
+
+* Invalid cities display `"Not Found"`.
+* Some API failures may require console debugging.
+
+### Performance Consideration
+
+Frequent API calls during typing may impact performance.
+Implementing a **debounce mechanism** is recommended.
+
+### Image Assets
+
+Missing or incorrect icon paths may cause runtime errors. Ensure all referenced images exist.
+
+---
+
+# 🔮 Future Improvements
+
+* Implement debounce for search input
+* Improve user-friendly API error messages
+* Cache API responses to reduce network usage
+* Add multi-language support
+* Support additional units (e.g., wind speed in mph)
+* Improve accessibility (keyboard navigation, screen readers)
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+See the `LICENSE` file for more details.
+
+---
+
+# 🙌 Acknowledgments
+
+* OpenWeatherMap — Weather & geocoding services
+* Open-Meteo — Forecast data
+* OpenCage — Geolocation services
+* PyQt5 — GUI framework
+
+---
+Developed as part of my Data Engineering learning journey.
